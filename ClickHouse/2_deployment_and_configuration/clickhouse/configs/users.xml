@@ -6,7 +6,7 @@
         <!-- Default settings. -->
         <default>
         </default>
-в
+
         <!-- Profile that allows only read queries. -->
         <readonly>
             <readonly>1</readonly>
