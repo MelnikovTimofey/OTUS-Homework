@@ -1,0 +1,23 @@
+version: "3"
+services:
+    server:
+      image: clickhouse/clickhouse-server
+      container_name: my-clickhouse-server
+      volumes:
+        - /Users/t.melnikov/DockerServices/clickhouse/lib:/var/lib/clickhouse
+        - /Users/t.melnikov/DockerServices/clickhouse/configs/users.xml:/etc/clickhouse-server/users.xml
+        - /Users/t.melnikov/DockerServices/clickhouse/configs/config.xml:/etc/clickhouse-server/config.xml
+        - /Users/t.melnikov/DockerServices/clickhouse/configs/users.d:/etc/clickhouse-server/users.d
+        - /Users/t.melnikov/DockerServices/clickhouse/configs/config.d:/etc/clickhouse-server/config.d
+        - /var/log/clickhouse-server:/var/log/clickhouse-server/      
+      ports:
+        - '127.0.0.1:8123:8123'
+        - '127.0.0.1:9000:9000'
+      ulimits:
+        nproc: 65535
+        nofile:
+          soft: 262144
+          hard: 262144
+    client:
+      image: yandex/clickhouse-client
+      command: ['--host', 'server']

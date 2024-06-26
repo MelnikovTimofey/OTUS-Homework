@@ -1,0 +1,8 @@
+<clickhouse>
+    <profiles>
+        <default>
+            <max_memory_usage>5368709120</max_memory_usage>
+            <join_algorithm>partial_merge</join_algorithm>
+        </default>
+    </profiles>
+</clickhouse>
