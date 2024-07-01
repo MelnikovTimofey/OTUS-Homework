@@ -71,7 +71,7 @@ select
 from dich
 where code=3;
 ```
-![select code 3](img/select_code_3.png)
+![select code 3](img/ы.png)
 
 Delete (alter table)
 ```sql
